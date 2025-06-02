@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AgendaPersonal.Views.RegistroPage"
+             Title="RegistroPage">
+    <VerticalStackLayout Padding="20" Spacing="10">
+        <Entry x:Name="nombreUsuarioEntry" Placeholder="Nombre de usuario" />
+        <Entry x:Name="emailEntry" Placeholder="Correo electrónico" />
+        <Entry x:Name="passwordEntry" Placeholder="Contraseña" IsPassword="True" />
+        <Entry x:Name="confirmPasswordEntry" Placeholder="Confirmar contraseña" IsPassword="True" />
+        <!-- PREGUNTA DE SEGURIDAD --> 
+        <Picker x:Name="preguntaPicker" Title="Selecciona una pregunta de seguridad">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>¿Cuál es el nombre de tu primera mascota?</x:String>
+                    <x:String>¿Cuál es tu comida favorita?</x:String>
+                    <x:String>¿En qué ciudad naciste?</x:String>
+                    <x:String>¿Cuál es el segundo nombre de tu madre?</x:String>
+                    <x:String>¿Cuál fue tu primer trabajo?</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+        <Entry x:Name="respuestaSeguridadEntry" Placeholder="Respuesta de seguridad" />
+        <Button Text="Registrarse" Clicked="OnRegistrarseClicked" />
+    </VerticalStackLayout>
+</ContentPage>

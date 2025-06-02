@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AgendaPersonal.DetalleContactoPage"
+             Title="Detalle de contacto"
+             BackgroundColor="#F4F4F4">
+
+    <VerticalStackLayout Padding="30" Spacing="25">
+
+        <!-- Datos del contacto en una tarjeta -->
+        <Frame CornerRadius="12" BackgroundColor="White" Padding="20" HasShadow="True">
+
+            <Grid ColumnDefinitions="Auto,*"
+                  RowDefinitions="Auto,Auto,Auto"
+                  ColumnSpacing="10" RowSpacing="15">
+
+                <Label Grid.Row="0" Grid.Column="0" Text="Nombre:"
+                       FontAttributes="Bold" TextColor="#444" />
+                <Label Grid.Row="0" Grid.Column="1" Text="{Binding Nombre}" TextColor="#222" />
+
+                <Label Grid.Row="1" Grid.Column="0" Text="Teléfono:"
+                       FontAttributes="Bold" TextColor="#444" />
+                <Label Grid.Row="1" Grid.Column="1" Text="{Binding Telefono}" TextColor="#222" />
+
+                <Label Grid.Row="2" Grid.Column="0" Text="Correo:"
+                       FontAttributes="Bold" TextColor="#444" />
+                <Label Grid.Row="2" Grid.Column="1" Text="{Binding CorreoElectronico}" TextColor="#222" />
+
+            </Grid>
+        </Frame>
+
+        <!-- Botón Editar -->
+        <Button Text="Editar"
+                Clicked="OnEditarClicked"
+                BackgroundColor="#3498DB"
+                TextColor="White"
+                CornerRadius="10"
+                FontAttributes="Bold"
+                HeightRequest="50" />
+
+        <!-- Botón Eliminar -->
+        <Button Text="Eliminar"
+                Clicked="OnEliminarClicked"
+                BackgroundColor="#E74C3C"
+                TextColor="White"
+                CornerRadius="10"
+                FontAttributes="Bold"
+                HeightRequest="50" />
+    </VerticalStackLayout>
+</ContentPage>

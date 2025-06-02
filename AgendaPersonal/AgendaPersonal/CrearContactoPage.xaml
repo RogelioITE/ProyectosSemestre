@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AgendaPersonal.CrearContactoPage"
+             Title="Nuevo contacto"
+             BackgroundColor="#F4F4F4">
+
+    <VerticalStackLayout Padding="30" Spacing="20">
+
+        <!-- Campo Nombre -->
+        <Entry x:Name="nombreEntry"
+               Placeholder="Nombre completo"
+               FontSize="16"
+               BackgroundColor="White"
+               PlaceholderColor="#999"
+               TextColor="#333"
+               HeightRequest="50"
+               Margin="0"
+               />
+
+        <!-- Campo Teléfono -->
+        <Entry x:Name="telefonoEntry"
+               Placeholder="Teléfono"
+               Keyboard="Telephone"
+               FontSize="16"
+               BackgroundColor="White"
+               PlaceholderColor="#999"
+               TextColor="#333"
+               HeightRequest="50"
+               />
+
+        <!-- Campo Correo -->
+        <Entry x:Name="correoEntry"
+               Placeholder="Correo electrónico"
+               Keyboard="Email"
+               FontSize="16"
+               BackgroundColor="White"
+               PlaceholderColor="#999"
+               TextColor="#333"
+               HeightRequest="50"
+               />
+
+        <!-- Botón Guardar -->
+        <Button Text="Guardar"
+                Clicked="OnGuardarClicked"
+                BackgroundColor="#27AE60"
+                TextColor="White"
+                FontAttributes="Bold"
+                CornerRadius="10"
+                HeightRequest="50"
+                />
+
+    </VerticalStackLayout>
+</ContentPage>

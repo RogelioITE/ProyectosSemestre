@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AgendaPersonal.ConfiguracionPage"
+             Title="Configuración"
+             BackgroundColor="#EFEFEF">
+
+    <VerticalStackLayout Padding="25" Spacing="25">
+
+        <!-- Sección Tema -->
+        <Frame BackgroundColor="#FFFFFF" CornerRadius="10" Padding="15" HasShadow="True">
+            <VerticalStackLayout Spacing="10">
+                <Label Text="Tema:" FontAttributes="Bold" FontSize="16" TextColor="#444" />
+                <HorizontalStackLayout Spacing="20">
+                    <Label Text="Claro" VerticalOptions="Center" TextColor="#444" />
+                    <Switch x:Name="temaSwitch" Toggled="OnTemaToggled" />
+                    <Label Text="Oscuro" VerticalOptions="Center" TextColor="#444" />
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+        </Frame>
+
+        <!-- Sección Idioma -->
+        <Frame BackgroundColor="#FFFFFF" CornerRadius="10" Padding="15" HasShadow="True">
+            <VerticalStackLayout Spacing="10">
+                <Label Text="Idioma:" FontAttributes="Bold" FontSize="16" TextColor="#444" />
+                <Picker x:Name="idiomaPicker" SelectedIndexChanged="OnIdiomaChanged">
+                    <Picker.Items>
+                        <x:String>es</x:String>
+                        <x:String>en</x:String>
+                    </Picker.Items>
+                </Picker>
+            </VerticalStackLayout>
+        </Frame>
+
+        <!-- Estado -->
+        <Label x:Name="lblEstado"
+               Text="Cambios guardados"
+               IsVisible="False"
+               TextColor="#007ACC"
+               FontAttributes="Italic"
+               HorizontalTextAlignment="Center" />
+
+        <!-- Botones -->
+        <VerticalStackLayout Spacing="15">
+            <Button Text="Cerrar sesión"
+                    Clicked="IrCerrar"
+                    BackgroundColor="#5DADE2"
+                    TextColor="White"
+                    CornerRadius="8"
+                    FontAttributes="Bold"
+                    HorizontalOptions="FillAndExpand" />
+
+            <Button Text="Eliminar cuenta"
+                    Clicked="OnEliminarUsuarioClicked"
+                    BackgroundColor="#E74C3C"
+                    TextColor="White"
+                    CornerRadius="8"
+                    FontAttributes="Bold"
+                    HorizontalOptions="FillAndExpand" />
+        </VerticalStackLayout>
+
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AgendaPersonal.ContactosPage"
+             Title="Contactos"
+             BackgroundColor="#F4F4F4">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="25" Spacing="20">
+
+            <!-- Título -->
+            <Label x:Name="titleLabel"
+                   Text="Agenda"
+                   FontAttributes="Bold"
+                   FontSize="24"
+                   HorizontalOptions="Center"
+                   TextColor="#333" />
+
+            <!-- Botón Agregar -->
+            <Button Text="Agregar Contacto"
+                    Clicked="OnAgregarContactoClicked"
+                    BackgroundColor="#3498DB"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    CornerRadius="10"
+                    Padding="10" />
+
+            <!-- Lista de contactos -->
+            <CollectionView x:Name="contactosView"
+                            ItemsSource="{Binding Contacto}"
+                            SelectionMode="Single"
+                            SelectionChanged="OnContactoSeleccionado"
+                            Margin="0,10">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <SwipeView>
+                            <SwipeView.RightItems>
+                                <SwipeItems Mode="Reveal">
+                                    <SwipeItem Text="Eliminar"
+                                               BackgroundColor="#E74C3C"
+                                               
+                                               Invoked="OnEliminarContacto"
+                                               IconImageSource="delete.png" />
+                                </SwipeItems>
+                            </SwipeView.RightItems>
+
+                            <Frame CornerRadius="12" Padding="15" Margin="0,5" BackgroundColor="White" HasShadow="True">
+                                <VerticalStackLayout Spacing="5">
+                                    <Label Text="{Binding Nombre}"
+                                           FontSize="18"
+                                           FontAttributes="Bold"
+                                           TextColor="#2C3E50" />
+                                    <Label Text="{Binding Telefono}" TextColor="#555" />
+                                    <Label Text="{Binding CorreoElectronico}"
+                                           FontSize="12"
+                                           TextColor="#888" />
+                                </VerticalStackLayout>
+                            </Frame>
+                        </SwipeView>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <!-- Botón Configuración -->
+            <Button Text="Configuración"
+                    Clicked="OnConfiguracionClicked"
+                    BackgroundColor="#95A5A6"
+                    TextColor="White"
+                    FontAttributes="Bold"
+                    CornerRadius="10"
+                    Padding="10" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

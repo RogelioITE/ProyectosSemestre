@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="AgendaPersonal.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:AgendaPersonal"
+    xmlns:views="clr-namespace:AgendaPersonal.Views" 
+    Shell.FlyoutBehavior="Disabled">
+    <!--Loading Page-->
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate views:LoadingPage}"
+        Route="LoadingPage" />
+    <!--Login Page-->
+    <ShellContent 
+     Title="Login" 
+     ContentTemplate="{DataTemplate views:LoginPage}"
+     Route="login"/>
+    <ShellContent 
+    Title="RecuperarPage"
+    ContentTemplate="{DataTemplate views:RecuperarPage}" 
+    Route="RecuperarPage"/>
+    <!--Main Page-->
+    <ShellContent
+     Title="Home"
+     ContentTemplate="{DataTemplate local:MainPage}"
+     Route="home" />
+
+  
+</Shell>
